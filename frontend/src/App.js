@@ -137,7 +137,7 @@ function App() {
 }
 
 function NavBar({ theme, setTheme, setSidebarOpen, sidebarOpen }) {
-  const active = useActiveRoute;
+
   const { user, setUser } = useUser();
 
   const handleUserChange = (e) => {
