@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Disaster Updates</title>
+    <script src="https://cdn.socket.io/4.7.2/socket.io.min.js"></script>
+  </head>
+  <body>
+    <h1>Disaster Updates</h1>
+    <ul id="updates"></ul>
+
+    <script>
+      const socket = io("http://localhost:3000");
+
+      socket.on("disaster_updated", (msg) => {
+        const li = document.createElement("li");
+        li.innerText = `[${msg.type}] ${msg.disaster.title}`;
+        document.getElementById("updates").appendChild(li);
+      });
+    </script>
+  </body>
+</html>
