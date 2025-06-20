@@ -1,7 +1,9 @@
 [build]
-  publish = "dist" # Ensure this points to your build folder
-  command = "npm run build" # Adjust this if your build command is different
- [[redirects]]
+  base = "frontend"
+  publish = "build"           # ← This is correct for CRA
+  command = "npm run build"
+
+[[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
