@@ -109,3 +109,4 @@ Made with love and caffeine by Hrishikesh Chaudhari ☕
 🔗 GitHub: [Github](https://github.com/HrishikeshChaudhari24/)
 
 💼 LinkedIn: [Linkedin](https://www.linkedin.com/in/hrishikesh-chaudhari-169308248/)
+📧 Email: [Email](mailto:chaudharihrishikesh30@gmail.com)
