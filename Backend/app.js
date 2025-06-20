@@ -8,17 +8,27 @@ const app = express();
 const server = http.createServer(app);
 const mockAuth = require('./middleware/mockAuth');
 
+// Configure CORS for Express
+app.use(cors({
+  origin: 'https://disaster-response-coordination.netlify.app',
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  allowedHeaders: ['Content-Type', 'Authorization']
+}));
+
+// Configure CORS for Socket.IO
 const io = new Server(server, {
   cors: {
-    origin: '*',
-    methods: ['GET', 'POST', 'PUT', 'DELETE']
+    origin: 'https://disaster-response-coordination.netlify.app',
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    allowedHeaders: ['Content-Type', 'Authorization'],
+    credentials: true
   }
 });
 
-app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(mockAuth);
+
 // WebSocket connection
 io.on('connection', (socket) => {
   console.log('Client connected:', socket.id);
